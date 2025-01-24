@@ -1,76 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-  <title>Document</title>
-  <link rel="stylesheet" href="../assets/css/vido_agent.css">
-  <link rel="stylesheet" href="../assets/css/vido_agent_hotel.css">
-  <link rel="stylesheet" href="../assets/css/vido_agent_text.css">
-  <link rel="stylesheet" href="../assets/css/vido_agent_responsive.css">
-  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/vido_agent.css" />
+    <!-- FOR HOTEL  -->
+    <link rel="stylesheet" href="../assets/css/vido_agent_hotel.css" />
+    <link rel="stylesheet" href="../assets/css/vido_agent_price_range.css" />
+    <link rel="stylesheet" href="../assets/css/Grid/grid_table.css" />
+    <!-- END FOR HOTEL -->
+    <link rel="stylesheet" href="../assets/css/vido_agent_text.css" />
+    <link rel="stylesheet" href="../assets/css/vido_agent_responsive.css" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
 
-</head>
-<body>
+    <!-- Grid.js -->
+    <link href="../assets/css/Grid/grid.min.css" rel="stylesheet" />
+    <script src="../assets/js/Grid/gridjs.umd.js"></script>
+  </head>
+  <body>
     <div class="main-home-app main-hotel-app-bg">
-        <header class="container">
-            <div class="header-main">
-                <div class="header-left text-lg font-medium">
-                    + Contact
+      <header class="container">
+        <div class="header-main">
+          <div class="header-left text-lg font-medium">+ Contact</div>
+
+          <div class="logo-box">
+            <img
+              src="../assets/images/logo/logo-vido.png"
+              alt="Vidotour App"
+              class="logo-img"
+            />
+          </div>
+
+          <div class="header-right">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11.9999 11C14.209 11 15.9999 9.20914 15.9999 7C15.9999 4.79086 14.209 3 11.9999 3C9.79074 3 7.99988 4.79086 7.99988 7C7.99988 9.20914 9.79074 11 11.9999 11ZM11.9999 21C15.8659 21 18.9999 19.2091 18.9999 17C18.9999 14.7909 15.8659 13 11.9999 13C8.13388 13 4.99988 14.7909 4.99988 17C4.99988 19.2091 8.13388 21 11.9999 21Z"
+                fill="white"
+              />
+            </svg>
+
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M3.99988 6C3.99988 5.44772 4.46706 5 5.04336 5H18.9564C19.5327 5 19.9999 5.44772 19.9999 6C19.9999 6.55228 19.5327 7 18.9564 7H5.04336C4.46706 7 3.99988 6.55228 3.99988 6ZM3.99988 11.5C3.99988 10.9477 4.46706 10.5 5.04336 10.5H18.9564C19.5327 10.5 19.9999 10.9477 19.9999 11.5C19.9999 12.0523 19.5327 12.5 18.9564 12.5H5.04336C4.46706 12.5 3.99988 12.0523 3.99988 11.5ZM5.04336 16C4.46706 16 3.99988 16.4477 3.99988 17C3.99988 17.5523 4.46706 18 5.04336 18H18.9564C19.5327 18 19.9999 17.5523 19.9999 17C19.9999 16.4477 19.5327 16 18.9564 16H5.04336Z"
+                fill="white"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <div class="header-nav">
+          <ul class="nav-list text-lg font-medium">
+            <li><a href="#">Hotel</a></li>
+            <li><a href="#">Cruises</a></li>
+            <li><a href="#">Package Tours</a></li>
+            <li><a href="#">Tailor-Made Tours</a></li>
+          </ul>
+        </div>
+      </header>
+      <!-- MAIN APP -->
+      <section class="content-app-section">
+        <div>
+          <h1 class="title-page text-2xl font-bold">Hotel</h1>
+
+          <div class="content-listing-box container">
+            <div class="content-left">
+              <div class="filter-box">
+                <div class="price-range-container">
+                  <label for="priceRange">Price Range</label>
+                  <div class="range-values">
+                    <span id="minValue">4 USD</span>
+                    <span id="maxValue">800+ USD</span>
+                  </div>
+                  <div class="slider-container">
+                    <input
+                      type="range"
+                      id="rangeMin"
+                      min="4"
+                      max="800"
+                      value="4"
+                      step="1"
+                      oninput="updateRange()"
+                    />
+                    <input
+                      type="range"
+                      id="rangeMax"
+                      min="4"
+                      max="800"
+                      value="800"
+                      step="1"
+                      oninput="updateRange()"
+                    />
+                  </div>
                 </div>
 
-                <div class="logo-box">
-                    <img src="../assets/images/logo/logo-vido.png" alt="Vidotour App" class="logo-img">
+                <div class="filter-row-box">
+                  <div class="input-group-box">
+                    <label for="check-in-date">Check in</label>
+                    <input
+                      type="date"
+                      id="check-in-date"
+                      name="check-in-date"
+                      class="filter-input"
+                      placeholder="Add dates"
+                    />
+                  </div>
+
+                  <div class="input-group-box">
+                    <label for="check-out-date">Check out</label>
+                    <input
+                      type="date"
+                      id="check-out-date"
+                      name="check-out-date"
+                      class="filter-input"
+                      placeholder="Add dates"
+                    />
+                  </div>
+
+                  <div class="input-group-box">
+                    <label for="night-stay">Night(s)</label>
+                    <input
+                      type="number"
+                      id="night-stay"
+                      name="night-stay"
+                      min="0"
+                      class="filter-input"
+                      placeholder="Please enter"
+                    />
+                  </div>
                 </div>
 
-                <div class="header-right">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9999 11C14.209 11 15.9999 9.20914 15.9999 7C15.9999 4.79086 14.209 3 11.9999 3C9.79074 3 7.99988 4.79086 7.99988 7C7.99988 9.20914 9.79074 11 11.9999 11ZM11.9999 21C15.8659 21 18.9999 19.2091 18.9999 17C18.9999 14.7909 15.8659 13 11.9999 13C8.13388 13 4.99988 14.7909 4.99988 17C4.99988 19.2091 8.13388 21 11.9999 21Z" fill="white"/>
-                    </svg>
+                <div class="filter-row-box">
+                  <div class="input-group-box">
+                    <label for="city">City</label>
+                    <select name="city" id="city" class="filter-input">
+                      <option value="" disabled selected>Please enter</option>
+                      <option value="test1">1</option>
+                      <option value="test2">2</option>
+                    </select>
+                  </div>
 
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3.99988 6C3.99988 5.44772 4.46706 5 5.04336 5H18.9564C19.5327 5 19.9999 5.44772 19.9999 6C19.9999 6.55228 19.5327 7 18.9564 7H5.04336C4.46706 7 3.99988 6.55228 3.99988 6ZM3.99988 11.5C3.99988 10.9477 4.46706 10.5 5.04336 10.5H18.9564C19.5327 10.5 19.9999 10.9477 19.9999 11.5C19.9999 12.0523 19.5327 12.5 18.9564 12.5H5.04336C4.46706 12.5 3.99988 12.0523 3.99988 11.5ZM5.04336 16C4.46706 16 3.99988 16.4477 3.99988 17C3.99988 17.5523 4.46706 18 5.04336 18H18.9564C19.5327 18 19.9999 17.5523 19.9999 17C19.9999 16.4477 19.5327 16 18.9564 16H5.04336Z" fill="white"/>
-                    </svg>
+                  <div class="input-group-box">
+                    <label for="check-out-date">Hotel</label>
+                    <select name="hotel" id="hotel" class="filter-input">
+                      <option value="" disabled selected>Please enter</option>
+                      <option value="test1">1</option>
+                      <option value="test2">2</option>
+                    </select>
+                  </div>
                 </div>
+
+                <div class="filter-row-box">
+                  <div class="input-group-box">
+                    <label for="star-rating">Star rating</label>
+                    <select
+                      name="star-rating"
+                      id="star-rating"
+                      class="filter-input"
+                    >
+                      <option value="" disabled selected>Please enter</option>
+                      <option value="test1">3</option>
+                      <option value="test2">4</option>
+                    </select>
+                  </div>
+
+                  <div class="input-group-box">
+                    <label for="room-type">Room type</label>
+                    <select
+                      name="room-type"
+                      id="room-type"
+                      class="filter-input"
+                    >
+                      <option value="" disabled selected>Please enter</option>
+                      <option value="test1">5</option>
+                      <option value="test2">6</option>
+                    </select>
+                  </div>
+
+                  <div class="input-group-box">
+                    <label for="number-of-rooms">Number of rooms</label>
+                    <input
+                      type="number"
+                      id="number-of-rooms"
+                      name="number-of-rooms"
+                      min="0"
+                      class="filter-input"
+                      placeholder="Please enter"
+                    />
+                  </div>
+                </div>
+
+                <div class="filter-button-action">
+                  <button class="btn-clear-filter button-secondary">
+                    Clear
+                  </button>
+                  <button class="btn-search-filter button-primary">
+                    Search
+                  </button>
+                </div>
+              </div>
+
+              <div class="listing-box mt-24">
+                <div id="data-container"></div>
+
+                <script>
+                  let data = [
+                    {
+                      hotel_title: "Hotel 1",
+                      hotel_city: "Ha Noi",
+                      hotel_stars: 3,
+                      price: 100,
+                      hotel_slug: "hotel-1",
+                    },
+                    {
+                      hotel_title: "Hotel 2",
+                      hotel_city: "Ho Chi Minh",
+                      hotel_stars: 4,
+                      price: 150,
+                      hotel_slug: "hotel-2",
+                    },
+                    {
+                      hotel_title: "Hotel 2",
+                      hotel_city: "Ho Chi Minh",
+                      hotel_stars: 4,
+                      price: 150,
+                      hotel_slug: "hotel-2",
+                    },
+                    {
+                      hotel_title: "Hotel 2",
+                      hotel_city: "Ho Chi Minh",
+                      hotel_stars: 4,
+                      price: 150,
+                      hotel_slug: "hotel-2",
+                    },
+                    {
+                      hotel_title: "Hotel 2",
+                      hotel_city: "Ho Chi Minh",
+                      hotel_stars: 4,
+                      price: 150,
+                      hotel_slug: "hotel-2",
+                    },
+                    {
+                      hotel_title: "Hotel 2",
+                      hotel_city: "Ho Chi Minh",
+                      hotel_stars: 4,
+                      price: 150,
+                      hotel_slug: "hotel-2",
+                    },
+                    {
+                      hotel_title: "Hotel 2",
+                      hotel_city: "Ho Chi Minh",
+                      hotel_stars: 4,
+                      price: 150,
+                      hotel_slug: "hotel-2",
+                    },
+                  ];
+
+                  function renderGrid() {
+                    const grid = new gridjs.Grid({
+                      columns: [
+                        {
+                          name: "Hotel",
+                          formatter: (cell, row) => {
+                            const name = cell;
+                            const slug = row.cells[4].data;
+                            return gridjs.html(
+                              `<a style="color: black;" title="Click to view detail" href="/hotels/detail/${slug}">${name}</a>`
+                            );
+                          },
+                        },
+                        "City",
+                        "Star",
+                        "From (USD)",
+                        {
+                          name: "hotel_slug",
+                          hidden: true,
+                        },
+                      ],
+                      data: data.map((item) => [
+                        item.hotel_title,
+                        item.hotel_city,
+                        `${
+                          item.hotel_stars ? item.hotel_stars + " Stars" : ""
+                        }`,
+                        item.price + "$",
+                        item.hotel_slug,
+                      ]),
+                      pagination: false,
+                      sort: true,
+                    });
+
+                    document.getElementById("data-container").innerHTML = "";
+                    grid.render(document.getElementById("data-container"));
+                  }
+
+                  renderGrid();
+                </script>
+              </div>
             </div>
 
-            <div class="header-nav">
-                <ul class="nav-list text-lg font-medium">
-                    <li><a href="#">Hotel</a></li>
-                    <li><a href="#">Cruises</a></li>
-                    <li><a href="#">Package Tours</a></li>
-                    <li><a href="#">Tailor-Made Tours</a></li>
-                </ul>
-            </div>
-        </header>
-        <!-- MAIN APP -->
-        <section class="content-app-section">
-            <div>
-                <h1 class="title-page text-2xl font-bold">Hotel</h1>
+            <div class="content-right">
+              <div class="listing-infomation-head">
+                <img src="../assets/images/logo/ph.jpg" alt="PH Logo" />
 
-                <div class="content-listing-box">
-                    <div class="content-left">
-                        <div class="filter-box">
+                <div class="info-box">
+                  <h5 class="info-head-title text-base font-bold">
+                    Boutique Hoi An Resort
+                  </h5>
+                  <p class="info-head-content text-xs">
+                    <span>Link Hotel:</span>
+                    <span>
+                      <a href="#"
+                        >https://www.premierholidays.co.uk/destinations/vietnam-holidays/hotels/boutique-hoi-an-resort</a
+                      >
+                    </span>
+                  </p>
+                </div>
+              </div>
 
-                        </div>
+              <div class="listing-infomation-body">
+                <div class="info-box">
+                  <h5 class="info-head-title text-base font-bold">
+                    Terms & Conditions
+                  </h5>
+                  <div class="info-body-content text-sm font-medium">
+                    <ul class="content-listing-disc">
+                      <li>Pre-payment rquired</li>
+                      <li>Non-refundable</li>
+                      <li>
+                        Any changes must be made at least 30 days before the
+                        check in date. Subject to revision fees.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
 
-                        <div class="listing-box">
-
-                        </div>
+                <div class="info-box mt-16">
+                  <h5 class="info-head-title text-base font-bold">
+                    Services included
+                  </h5>
+                  <div class="info-body-content text-sm font-medium">
+                    <div class="info-body-desc">
+                      <svg
+                        width="16"
+                        height="17"
+                        viewBox="0 0 16 17"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M7.99998 15.1663C11.6819 15.1663 14.6666 12.1816 14.6666 8.49967C14.6666 4.81778 11.6819 1.83301 7.99998 1.83301C4.31808 1.83301 1.33331 4.81778 1.33331 8.49967C1.33331 12.1816 4.31808 15.1663 7.99998 15.1663ZM11.0613 6.80667C11.2309 6.58869 11.1916 6.27456 10.9736 6.10502C10.7556 5.93549 10.4415 5.97475 10.272 6.19273L7.60064 9.6273C7.54124 9.70367 7.4295 9.71358 7.35759 9.64886L5.6678 8.12805C5.46254 7.94332 5.1464 7.95996 4.96167 8.16522C4.77694 8.37047 4.79358 8.68661 4.99884 8.87134L6.68862 10.3922C7.19204 10.8452 7.97418 10.7759 8.38999 10.2412L11.0613 6.80667Z"
+                          fill="#FBBC04"
+                        />
+                      </svg>
+                      <span>Welcome drink + Private airport transfer</span>
                     </div>
 
-                    <div class="content-right">
-                        
+                    <div class="info-body-desc mt-8">
+                      <svg
+                        width="16"
+                        height="17"
+                        viewBox="0 0 16 17"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M7.99998 15.1663C11.6819 15.1663 14.6666 12.1816 14.6666 8.49967C14.6666 4.81778 11.6819 1.83301 7.99998 1.83301C4.31808 1.83301 1.33331 4.81778 1.33331 8.49967C1.33331 12.1816 4.31808 15.1663 7.99998 15.1663ZM11.0613 6.80667C11.2309 6.58869 11.1916 6.27456 10.9736 6.10502C10.7556 5.93549 10.4415 5.97475 10.272 6.19273L7.60064 9.6273C7.54124 9.70367 7.4295 9.71358 7.35759 9.64886L5.6678 8.12805C5.46254 7.94332 5.1464 7.95996 4.96167 8.16522C4.77694 8.37047 4.79358 8.68661 4.99884 8.87134L6.68862 10.3922C7.19204 10.8452 7.97418 10.7759 8.38999 10.2412L11.0613 6.80667Z"
+                          fill="#FBBC04"
+                        />
+                      </svg>
+                      <span>Free breakfast</span>
                     </div>
-                        
+                  </div>
                 </div>
+
+                <div class="info-box mt-16">
+                  <h5 class="info-head-title text-base font-bold">
+                    Notes from Hotel
+                  </h5>
+                  <div class="info-body-content text-sm font-medium">
+                    <ul class="content-listing-disc">
+                      <li>Maximum 4 pax</li>
+                      <li>Compulsolry Dinner for New Year Eve</li>
+                      <li>Prepayment required</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="info-box mt-16 text-sm font-bold">
+                  When selecting a matching hotel in the list at the bottom, the
+                  info for this hotel will appear.
+                </div>
+
+                <div class="info-box-button">
+                  <button class="button-select-item button-primary w-full">
+                    Select
+                  </button>
+                </div>
+              </div>
             </div>
-        </section>
-        <!-- END MAIN APP -->
-        <footer>
-            <p class="text-sm font-medium m-0">Copyright © VIDOTOUR 2024. All rights reserved</p>
-            <script src="./assets/js/bootstrap.bundle.min.js"></script>
-        </footer>
+          </div>
+        </div>
+      </section>
+      <!-- END MAIN APP -->
+      <footer>
+        <p class="text-sm font-medium m-0">
+          Copyright © VIDOTOUR 2024. All rights reserved
+        </p>
+        <script src="../assets/js/price_range.js"></script>
+        <script src="../assets/js/bootstrap.bundle.min.js"></script>
+      </footer>
     </div>
-</body>
+  </body>
 </html>

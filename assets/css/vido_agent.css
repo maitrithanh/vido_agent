@@ -59,6 +59,26 @@
   src: url("../fonts/ReemKufiFun.ttf") format("truetype");
 }
 
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* border-radius: 10px; */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b0b0b0;
+  border-radius: 0.25rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #909090;
+}
+
 /* Reset CSS */
 * {
   margin: 0;
@@ -67,17 +87,23 @@
   font-family: "Century Gothic Std", sans-serif;
 }
 
-html, body {
-  height: 100%;
+html {
   font-size: 16px;
 }
 
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
@@ -86,8 +112,47 @@ a {
   color: inherit;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
+}
+
+.button-primary {
+  background: #fbbc04;
+  box-shadow: 0px 126px 35px 0px #00000000;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 0.375rem;
+  height: 2.5rem;
+  width: 7.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+}
+
+.button-secondary {
+  background: #c2c5c6;
+  box-shadow: 0px 126px 35px 0px #00000000;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 0.375rem;
+  height: 2.5rem;
+  width: 7.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  gap: 3.375rem;
+}
+
+.title-page {
+  color: #fff;
+  line-height: 2.25rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .w-full {
@@ -99,7 +164,19 @@ ul, ol {
 }
 
 .m-0 {
-  margin: 0px;
+  margin: 0;
+}
+
+.mt-8 {
+  margin-top: 0.5rem;
+}
+
+.mt-16 {
+  margin-top: 1rem;
+}
+
+.mt-24 {
+  margin-top: 1.5rem;
 }
 
 /* APP AGENT */
@@ -186,25 +263,23 @@ header {
   align-items: center;
   text-align: center;
   border-radius: 50%;
-  background-color: #FFFFFF33;
-  border: 0.0625rem solid #FFFFFF;
+  background-color: #ffffff33;
+  border: 0.0625rem solid #ffffff;
   position: relative;
-  box-shadow: 
-  -11px 1px 25px 0px #0000001A, 
-  -45px 6px 46px 0px #00000017, 
-  -102px 13px 62px 0px #0000000D, 
-  -181px 24px 73px 0px #00000003, 
-  -283px 37px 80px 0px #00000000;
+  box-shadow: -11px 1px 25px 0px #0000001a, -45px 6px 46px 0px #00000017,
+    -102px 13px 62px 0px #0000000d, -181px 24px 73px 0px #00000003,
+    -283px 37px 80px 0px #00000000;
 }
 
-.welcome-circle  .welcome-text {
+.welcome-circle .welcome-text {
   font-family: "ReemKufiFun", sans-serif;
-  color: #fff; line-height: 4.5rem;
+  color: #fff;
+  line-height: 4.5rem;
 }
 
 .welcome-circle .welcome-text .welcome-logo {
   font-family: "ReemKufiFun", sans-serif;
-  color: #FFBE55;
+  color: #ffbe55;
   font-weight: 700;
 }
 
@@ -220,22 +295,19 @@ header {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: 0.0625rem solid #FFFFFF;
+  border: 0.0625rem solid #ffffff;
   color: #fff;
   cursor: pointer;
   user-select: none;
   border-radius: 50%;
-  background: #FFFFFF33;
-  box-shadow: 
-  -11px 1px 25px 0px #0000001A, 
-  -45px 6px 46px 0px #00000017, 
-  -102px 13px 62px 0px #0000000D, 
-  -181px 24px 73px 0px #00000003, 
-  -283px 37px 80px 0px #00000000;
+  background: #ffffff33;
+  box-shadow: -11px 1px 25px 0px #0000001a, -45px 6px 46px 0px #00000017,
+    -102px 13px 62px 0px #0000000d, -181px 24px 73px 0px #00000003,
+    -283px 37px 80px 0px #00000000;
 }
 
 .welcome-circle .dest-vietnam {
-  background-image: url('../images/dest/vietnam.jpg');
+  background-image: url("../images/dest/vietnam.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -245,7 +317,7 @@ header {
 }
 
 .welcome-circle .dest-laos {
-  background-image: url('../images/dest/laos.jpg');
+  background-image: url("../images/dest/laos.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -254,13 +326,13 @@ header {
 }
 
 .welcome-circle .dest-cambodia {
-  background-image: url('../images/dest/cambodia.jpg');
+  background-image: url("../images/dest/cambodia.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
   right: -10.375rem;
-  top:8.875rem;
+  top: 8.875rem;
 }
 
 /* FOOTER  */
