@@ -1,0 +1,276 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Century Gothic Std";
+  src: url("../fonts/CenturyGothicStd.eot");
+  src: url("../fonts/CenturyGothicStd.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/CenturyGothicStd.woff2") format("woff2"),
+    url("../fonts/CenturyGothicStd.woff") format("woff"),
+    url("../fonts/CenturyGothicStd.ttf") format("truetype"),
+    url("../fonts/CenturyGothicStd.svg#CenturyGothicStd") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Century Gothic Std";
+  src: url("../fonts/CenturyGothicStd-Italic.eot");
+  src: url("../fonts/CenturyGothicStd-Italic.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/CenturyGothicStd-Italic.woff2") format("woff2"),
+    url("../fonts/CenturyGothicStd-Italic.woff") format("woff"),
+    url("../fonts/CenturyGothicStd-Italic.ttf") format("truetype"),
+    url("../fonts/CenturyGothicStd-Italic.svg#CenturyGothicStd-Italic")
+      format("svg");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Century Gothic Std";
+  src: url("../fonts/CenturyGothicStd-Bold.eot");
+  src: url("../fonts/CenturyGothicStd-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/CenturyGothicStd-Bold.woff2") format("woff2"),
+    url("../fonts/CenturyGothicStd-Bold.woff") format("woff"),
+    url("../fonts/CenturyGothicStd-Bold.ttf") format("truetype"),
+    url("../fonts/CenturyGothicStd-Bold.svg#CenturyGothicStd-Bold")
+      format("svg");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Century Gothic Std";
+  src: url("../fonts/CenturyGothicStd-BoldItalic.eot");
+  src: url("../fonts/CenturyGothicStd-BoldItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/CenturyGothicStd-BoldItalic.woff2") format("woff2"),
+    url("../fonts/CenturyGothicStd-BoldItalic.woff") format("woff"),
+    url("../fonts/CenturyGothicStd-BoldItalic.ttf") format("truetype"),
+    url("../fonts/CenturyGothicStd-BoldItalic.svg#CenturyGothicStd-BoldItalic")
+      format("svg");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ReemKufiFun";
+  src: url("../fonts/ReemKufiFun.ttf") format("truetype");
+}
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Century Gothic Std", sans-serif;
+}
+
+html, body {
+  height: 100%;
+  font-size: 16px;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  width: 100%;
+}
+
+.m-0 {
+  margin: 0px;
+}
+
+/* APP AGENT */
+.main-home-app {
+  width: 100%;
+  height: 100vh;
+}
+
+.main-home-app-bg {
+  background-image: url("../images/background/home-bg.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.main-hotel-app-bg {
+  background-image: url("../images/background/hotel-bg.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* HEADER */
+
+header {
+  padding: 2rem 5rem !important;
+}
+
+.header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 2.5rem;
+}
+
+.header-nav {
+  margin-top: 2rem;
+}
+
+.header-main .logo-img {
+  max-height: 2.5rem;
+}
+
+.header-main .header-left {
+  color: #fff;
+  max-width: 13.875rem;
+}
+
+.header-main .header-right {
+  color: #fff;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 13.875rem;
+}
+
+.header-nav .nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+.header-nav .nav-list li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* CONTENT SECTION */
+
+.content-app-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+
+.content-app-section .welcome-circle {
+  height: 29.875rem;
+  width: 29.875rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #FFFFFF33;
+  border: 0.0625rem solid #FFFFFF;
+  position: relative;
+  box-shadow: 
+  -11px 1px 25px 0px #0000001A, 
+  -45px 6px 46px 0px #00000017, 
+  -102px 13px 62px 0px #0000000D, 
+  -181px 24px 73px 0px #00000003, 
+  -283px 37px 80px 0px #00000000;
+}
+
+.welcome-circle  .welcome-text {
+  font-family: "ReemKufiFun", sans-serif;
+  color: #fff; line-height: 4.5rem;
+}
+
+.welcome-circle .welcome-text .welcome-logo {
+  font-family: "ReemKufiFun", sans-serif;
+  color: #FFBE55;
+  font-weight: 700;
+}
+
+.welcome-circle .welcome-sub-text {
+  color: #fff;
+  margin-top: 2rem;
+}
+
+.welcome-circle .dest-box {
+  height: 12.5rem;
+  width: 12.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 0.0625rem solid #FFFFFF;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 50%;
+  background: #FFFFFF33;
+  box-shadow: 
+  -11px 1px 25px 0px #0000001A, 
+  -45px 6px 46px 0px #00000017, 
+  -102px 13px 62px 0px #0000000D, 
+  -181px 24px 73px 0px #00000003, 
+  -283px 37px 80px 0px #00000000;
+}
+
+.welcome-circle .dest-vietnam {
+  background-image: url('../images/dest/vietnam.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  bottom: -7.8125rem;
+  right: 6.5rem;
+}
+
+.welcome-circle .dest-laos {
+  background-image: url('../images/dest/laos.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: -9.3125rem;
+}
+
+.welcome-circle .dest-cambodia {
+  background-image: url('../images/dest/cambodia.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  right: -10.375rem;
+  top:8.875rem;
+}
+
+/* FOOTER  */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  min-height: 4.375rem;
+}
