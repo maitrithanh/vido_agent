@@ -1,0 +1,54 @@
+.content-app-section {
+  margin-top: 6rem;
+}
+
+.success-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.success-container .success-box {
+  margin-top: 4rem;
+  background: #ffffffcc;
+  border-radius: 1.25rem;
+  padding: 2rem 4rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  width: 50.8125rem;
+}
+
+.success-box .booking-status {
+  font-size: 2.5rem;
+  line-height: 3rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.success-box .booking-sub-status {
+  font-size: 2rem;
+  line-height: 2.4rem;
+  font-weight: 500;
+  color: #808080;
+  margin-top: 1rem;
+}
+
+.success-box .thank-you-confirm {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.btn-re-booking {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 0.625rem;
+}

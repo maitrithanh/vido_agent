@@ -1,0 +1,192 @@
+.content-listing-box .content-left {
+  width: 63.59% !important;
+}
+
+.content-listing-box .content-right {
+  width: 35.16% !important;
+}
+
+.header-app-action {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.header-app-action .title-page {
+  margin-bottom: 0;
+}
+
+.header-app-action .header-action-left {
+  width: 5.4375rem;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-app-action .header-action-right {
+  width: 5.4375rem;
+  color: #fff;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.content-listing-box .content-left .infomation-detail-box {
+  background-color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 0.625rem;
+  min-height: 42.8125rem;
+  max-height: 100%;
+  position: relative;
+}
+
+.slider-img-detail {
+  display: flex;
+  gap: 16px;
+}
+
+.infomation-detail-box .slider-img-detail .slider-img-main {
+  width: 18.625rem;
+  height: 10.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-img-detail .slider-img-main .img-main {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider-thumb-container {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1rem;
+}
+
+.slider-thumb-container .slider-img-thumb-item {
+  width: 8.5rem;
+  height: 4.75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.content-right .listing-infomation-detail {
+  background-color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 0.625rem;
+  min-height: 33.9375rem;
+  min-height: 42.8125rem;
+  max-height: 100%;
+  position: relative;
+}
+
+.detail-button-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.375rem;
+  margin-top: 1rem;
+  position: absolute;
+  width: calc(100% - 2rem);
+  left: 1rem;
+  bottom: 1rem;
+}
+
+.detail-button-action .btn-booking-detail {
+  width: 100%;
+  height: 2.5rem;
+  border-radius: 0.375rem;
+  padding: 1rem 2rem;
+}
+
+.swiper-thumb {
+  display: flex;
+  gap: 1rem;
+  overflow: auto;
+}
+
+.title-brief-container {
+  margin-top: 1rem;
+}
+
+.title-brief-container .title-brief {
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+}
+
+.infomation-container {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0.5rem;
+}
+
+.infomation-container .info-row,
+.info-row-left {
+  display: flex;
+  color: #292929;
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  font-weight: 500;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.info-row-left {
+  width: 50%;
+  align-items: center;
+}
+
+.info-row-right {
+  color: #808080;
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.info-row-right .input-info-booking {
+  height: 1.875rem;
+  width: 6.25rem;
+  border: 0.0625rem solid #d6d6d6;
+  padding: 0 1rem;
+  border-radius: 0.25rem;
+}
+
+.info-row-right .sub-info-row {
+  width: 3.125rem;
+}
+
+/* TOTAL */
+.total-title {
+  color: #e12127;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.875rem;
+}
+
+.total-price {
+  color: #e12127;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.875rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.grid-item {
+  text-align: start;
+}

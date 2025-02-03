@@ -222,51 +222,58 @@
                 <script>
                   let data = [
                     {
-                      hotel_title: "Hotel 1",
+                      hotel_title: "Boutique Hoi An Resort",
                       hotel_city: "Ha Noi",
                       hotel_stars: 3,
+                      room_type: "Family Villa",
                       price: 100,
                       hotel_slug: "hotel-1",
                     },
                     {
-                      hotel_title: "Hotel 2",
+                      hotel_title: "Boutique Old Quarter",
                       hotel_city: "Ho Chi Minh",
                       hotel_stars: 4,
+                      room_type: "Family Room",
                       price: 150,
                       hotel_slug: "hotel-2",
                     },
                     {
-                      hotel_title: "Hotel 2",
+                      hotel_title: "Airaang Boutique",
                       hotel_city: "Ho Chi Minh",
                       hotel_stars: 4,
+                      room_type: "Family Bungalow",
                       price: 150,
                       hotel_slug: "hotel-2",
                     },
                     {
-                      hotel_title: "Hotel 2",
+                      hotel_title: "Boutique Siesta",
                       hotel_city: "Ho Chi Minh",
                       hotel_stars: 4,
+                      room_type: "Family Villa",
                       price: 150,
                       hotel_slug: "hotel-2",
                     },
                     {
-                      hotel_title: "Hotel 2",
+                      hotel_title: "Ancient House Boutique",
                       hotel_city: "Ho Chi Minh",
                       hotel_stars: 4,
+                      room_type: "Family Cottage",
                       price: 150,
                       hotel_slug: "hotel-2",
                     },
                     {
-                      hotel_title: "Hotel 2",
+                      hotel_title: "New World",
                       hotel_city: "Ho Chi Minh",
                       hotel_stars: 4,
+                      room_type: "Family Villa",
                       price: 150,
                       hotel_slug: "hotel-2",
                     },
                     {
-                      hotel_title: "Hotel 2",
+                      hotel_title: "Continental",
                       hotel_city: "Ho Chi Minh",
                       hotel_stars: 4,
+                      room_type: "Family Villa",
                       price: 150,
                       hotel_slug: "hotel-2",
                     },
@@ -276,30 +283,64 @@
                     const grid = new gridjs.Grid({
                       columns: [
                         {
+                          name: "City",
+                          // width: "11.875rem",
+                          attributes: { style: "width: 11.875rem;" },
+                          formatter: (cell, row) => {
+                            const city = cell;
+                            return gridjs.html(`<div>${city}</div>`);
+                          },
+                        },
+                        {
                           name: "Hotel",
+                          attributes: { style: "width: 18.125rem;" },
                           formatter: (cell, row) => {
                             const name = cell;
                             const slug = row.cells[4].data;
                             return gridjs.html(
-                              `<a style="color: black;" title="Click to view detail" href="/hotels/detail/${slug}">${name}</a>`
+                              `<div style="color: black;" title="Click to view detail" href="/hotels/detail/${slug}">${name}</div>`
                             );
                           },
                         },
-                        "City",
-                        "Star",
-                        "From (USD)",
+                        {
+                          name: "Star",
+                          // width: "6.25rem",
+                          attributes: { style: "width: 6.5rem;" },
+                          formatter: (cell, row) => {
+                            const stars = cell;
+                            return gridjs.html(`<div>${stars}</div>`);
+                          },
+                        },
+                        {
+                          name: "Room Type",
+                          // width: "12.5rem",
+                          attributes: { style: "width: 12.5rem;" },
+                          formatter: (cell, row) => {
+                            const roomType = cell;
+                            return gridjs.html(`<div>${roomType}</div>`);
+                          },
+                        },
+                        {
+                          name: "From (USD)",
+                          attributes: { style: "width: 7.5rem;" },
+                          formatter: (cell, row) => {
+                            const price = cell;
+                            return gridjs.html(`<div>${price}$</div>`);
+                          },
+                        },
                         {
                           name: "hotel_slug",
                           hidden: true,
                         },
                       ],
                       data: data.map((item) => [
-                        item.hotel_title,
                         item.hotel_city,
+                        item.hotel_title,
                         `${
                           item.hotel_stars ? item.hotel_stars + " Stars" : ""
                         }`,
-                        item.price + "$",
+                        item.room_type,
+                        item.price,
                         item.hotel_slug,
                       ]),
                       pagination: false,
@@ -413,7 +454,10 @@
                 </div>
 
                 <div class="info-box-button">
-                  <button class="button-select-item button-primary w-full">
+                  <button
+                    class="button-select-item button-primary w-full"
+                    onclick="handleSelectHotel()"
+                  >
                     Select
                   </button>
                 </div>
@@ -429,6 +473,7 @@
         </p>
         <script src="../assets/js/price_range.js"></script>
         <script src="../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../assets/js/handle_hotel_agent.js"></script>
       </footer>
     </div>
   </body>

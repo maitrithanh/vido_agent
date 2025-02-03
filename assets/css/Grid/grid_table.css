@@ -1,3 +1,39 @@
 .gridjs-wrapper {
   height: 21.375rem !important;
+  border-radius: 0% !important;
+}
+
+th.gridjs-th {
+  background: #f9a51a !important;
+  color: #fff !important;
+  height: 2.5rem !important;
+  padding: 0.5rem 0.625rem !important;
+  font-size: 0.875rem !important;
+  line-height: 1.3125rem !important;
+  font-weight: 700 !important;
+  border: none !important;
+}
+
+th.gridjs-th-sort .gridjs-th-content {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+td.gridjs-td {
+  height: 2.5rem !important;
+  padding: 0.5rem 0.625rem !important;
+  font-size: 0.875rem !important;
+  line-height: 1.3125rem !important;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+td.gridjs-td {
+  border: none !important;
+  border-bottom: 1px solid #f0f0f0 !important;
+}
+
+.gridjs-tr:hover td.gridjs-td {
+  background: #fbbc041a !important;
 }
